@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> JavaScript Para Reac </h1>
+    <div id="Formulario">
+        <form action="">
+            <label for=""> Nombre </label>
+            <input id="Nombre" type="text" value="">
+            <label for=""> Nota #1 </label>
+            <input type="text" value="" onkeypress="Nota1()" name="nota">
+            <label for=""> Nota #2 </label>
+            <input type="text" value="" onchange="Nota2()">
+            <button onclick="Mensaje()"> Aceptar </button>
+        </form>
+        <div id= "root">
+
+        </div>
+    </div>
+    <script>
+        let Nombre= ''
+        let N1= ''
+        let N2= ''
+        function Mensaje(){
+            event.preventDefault()
+            Nombre= document.getElementById("Nombre").value
+            $root= document.getElementById("root")
+            $root.innerHTML= `<h2>${Nombre}: Notas: [${N1}, ${N2}]</h2>`
+            console.log(Nombre, N1, N2)
+        }
+        function Nota1(){
+            //console.log(event.target.name.event.target.value)
+            cosole.log(String.fromCharCode(event.keyCode))
+            N1+= String.fromCharCode(event.keyCode)
+        }
+        function Nota2(){
+            console.log(event.target.name.event.target.value)
+            N2= event.target.value
+        }
+    </script>
+    
+</body>
+</html>
